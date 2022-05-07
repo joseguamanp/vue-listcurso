@@ -15,9 +15,14 @@ new Vue({
                 time: this.time
             };
             if(this.title != "" && this.time != ""){
-                this.courses.push(data);
+                this.courses.push(data)
+                this.totalTime = parseInt(this.time) + this.totalTime
+            }else{
+                alert("Todos los datos son requeridos");
             }
             
         },
+    },
+    computed: {
     }
 });
