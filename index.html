@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso VUEJS</title>
+    <link rel="stylesheet" href="web/css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <img src="web/img/640px-Platzi.jpg" alt="logo platzi">
+        <h1>
+          Mis Cursos de Platzi💚
+        </h1>
+          <p>
+            <input type="text" placeholder="Titulo del curso" v-model="title"/>
+          </p>
+          <p>
+            <input type="number" placeholder="Horas" v-model="time" />
+          </p>
+          <p>
+            <button @click="savecource()">Guardar Curso</button>
+          </p>
+        </fieldset>
+        <div>
+          <h3>Lista de Cursos</h3>
+          <p class="red">Aun no has realizado cursos</p>
+          <div>
+            <ol v-for="c in courses" v-if="courses">
+                {{ c.title }} - {{ c.time }}
+            </ol>
+            <hr/>
+            <p>
+              Llevo <strong>{{ totalTime }}</strong> horas aprendiendo en Platzi.
+              <b>#NuncaParesDeAprender 💚</b>
+            </p>
+          </div>
+        </div>
+      </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+<script src="web/js/main.js"></script>
+</html>
